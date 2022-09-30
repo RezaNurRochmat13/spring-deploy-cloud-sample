@@ -1,9 +1,12 @@
 package com.fly.io.deploy.FlyIODeploy.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "persons")
+@Data
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
