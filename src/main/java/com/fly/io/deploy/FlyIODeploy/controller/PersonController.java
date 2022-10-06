@@ -18,6 +18,11 @@ public class PersonController {
         return new ResponseEntity<>(personService.listPersons(), HttpStatus.OK);
     }
 
+    @GetMapping("/persons/{id}")
+    public ResponseEntity<Object> getSinglePersons(@PathVariable Long id) {
+        return new ResponseEntity<>(personService.doDetailPerson(id), HttpStatus.OK);
+    }
+
     @PostMapping("/persons")
     public ResponseEntity<Object> createNewPersons(@RequestBody Person payload) {
         return new ResponseEntity<>(personService.doCreatePerson(payload), HttpStatus.OK);

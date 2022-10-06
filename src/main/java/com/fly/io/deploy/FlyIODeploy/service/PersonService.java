@@ -7,4 +7,5 @@ import java.util.List;
 public interface PersonService {
     List<Person> listPersons();
     Person doCreatePerson(Person person);
+    Person doDetailPerson(Long id);
 }
