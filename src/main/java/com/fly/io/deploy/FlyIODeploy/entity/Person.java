@@ -18,5 +18,8 @@ public class Person {
     @Column(name = "address")
     private String address;
 
+    @Column(name="street")
+    private String street;
+
 
 }
