@@ -28,6 +28,12 @@ public class PersonController {
 
     @PostMapping("/persons")
     public ResponseEntity<Object> createNewPersons(@RequestBody Person payload) {
-        return new ResponseEntity<>(personService.doCreatePerson(payload), HttpStatus.OK);
+        return new ResponseEntity<>(personService.doCreatePerson(payload), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/persons/{id}")
+    public ResponseEntity<Object> updatePersonById(@PathVariable Long id,
+                                                   @RequestBody Person payload) {
+        return new ResponseEntity<>(personService.doUpdatePerson(id, payload), HttpStatus.OK);
     }
 }

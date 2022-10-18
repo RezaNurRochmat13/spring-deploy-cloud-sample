@@ -30,4 +30,18 @@ public class PersonServiceImpl implements PersonService {
         return personRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Person not found id " + id));
     }
+
+    @Override
+    public Person doUpdatePerson(Long id, Person payload) {
+        Person personById = personRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Person not found id " + id));
+
+        personById.setName(payload.getName());
+        personById.setAddress(payload.getAddress());
+        personById.setStreet(payload.getStreet());
+
+        personRepository.save(personById);
+
+        return personById;
+    }
 }
