@@ -3,12 +3,14 @@ package com.fly.io.deploy.FlyIODeploy.service;
 import com.fly.io.deploy.FlyIODeploy.entity.Person;
 import com.fly.io.deploy.FlyIODeploy.repository.PersonRepository;
 import com.fly.io.deploy.FlyIODeploy.util.ResourceNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 public class PersonServiceImpl implements PersonService {
     @Autowired
     private PersonRepository personRepository;
